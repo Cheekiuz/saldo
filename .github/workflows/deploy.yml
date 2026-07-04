@@ -29,7 +29,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
         env:
-          VITE_BASE_PATH: /saldo/
+          VITE_BASE_PATH: /
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
