@@ -313,7 +313,7 @@ a {
   min-height: clamp(480px, 72vh, 620px);
   padding-block: var(--section-padding);
   background-color: var(--color-cream);
-  background-image: url("/hero-bg.png");
+  background-image: url("../hero-bg.png");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;

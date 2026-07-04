@@ -44,3 +44,12 @@ Add these records at your domain registrar:
 | CNAME | `www` | `cheekiuz.github.io` |
 
 DNS propagation can take up to 24–48 hours. Until then, the site may be available at [https://cheekiuz.github.io/saldo/](https://cheekiuz.github.io/saldo/).
+
+### Asset base path
+
+The GitHub Actions workflow sets `VITE_BASE_PATH` for production builds:
+
+- `/saldo/` — while using `cheekiuz.github.io/saldo` (current)
+- `/` — switch to this in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) once `saldofinansai.lt` is live
+
+Local development uses `/` by default (no env var needed).
