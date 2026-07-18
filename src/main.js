@@ -1,4 +1,7 @@
 const themeToggle = document.querySelector(".theme-toggle");
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
 
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
@@ -23,15 +26,22 @@ function updateHeader() {
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
+function navigateToTarget(target, { instant = false } = {}) {
+  const behavior = instant || prefersReducedMotion ? "auto" : "smooth";
+
+  target.scrollIntoView({ behavior });
+  target.focus({ preventScroll: true });
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     const id = anchor.getAttribute("href");
-    if (id === "#") return;
+    if (!id || id === "#") return;
 
     const target = document.querySelector(id);
     if (!target) return;
 
     e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth" });
+    navigateToTarget(target, { instant: target.id === "main-content" });
   });
 });

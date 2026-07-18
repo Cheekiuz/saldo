@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
       content="UAB Saldo – profesionali finansų apskaita. Tvarkinga ir teisinga apskaita – įmonės sėkmės garantas."
@@ -28,9 +29,10 @@
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Pereiti prie pagrindinio turinio</a>
     <header class="header">
       <div class="container header__inner">
-        <a href="#" class="logo">
+        <a href="#main-content" class="logo">
           <span class="logo__name">SALDO</span>
           <span class="logo__tagline">Finansų apskaita</span>
         </a>
@@ -80,7 +82,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="hero">
         <div class="container">
           <div class="hero__inner">
@@ -101,11 +103,18 @@
         </div>
       </section>
 
-      <section id="apie-mus" class="about">
+      <section
+        id="apie-mus"
+        class="about"
+        aria-labelledby="about-title"
+        tabindex="-1"
+      >
         <div class="container about__inner">
           <div class="about__left">
             <span class="section-label section-label--light">Apie mus</span>
-            <h2 class="about__title">Ne sąnaudos, o pagrindinė verslo dalis.</h2>
+            <h2 id="about-title" class="about__title">
+              Ne sąnaudos, o pagrindinė verslo dalis.
+            </h2>
           </div>
           <div class="about__right">
             <p>
@@ -121,36 +130,38 @@
         </div>
       </section>
 
-      <section class="why">
+      <section class="why" aria-labelledby="why-title">
         <div class="container">
           <span class="section-label">Kodėl mes?</span>
-          <h2 class="section-title">Penkios priežastys patikėti apskaitą mums</h2>
+          <h2 id="why-title" class="section-title">
+            Penkios priežastys patikėti apskaitą mums
+          </h2>
           <div class="why__grid">
             <article class="why__item">
-              <span class="why__num">01</span>
+              <span class="why__num" aria-hidden="true">01</span>
               <p>
                 Esame profesionalai, pasirengę prisiimti visą atsakomybę už Jūsų
                 finansų apskaitą.
               </p>
             </article>
             <article class="why__item">
-              <span class="why__num">02</span>
+              <span class="why__num" aria-hidden="true">02</span>
               <p>
                 Prisitaikysime prie Jūsų poreikių ir pasiūlysime tinkamiausią
                 apskaitos variantą.
               </p>
             </article>
             <article class="why__item">
-              <span class="why__num">03</span>
+              <span class="why__num" aria-hidden="true">03</span>
               <p>Paprastai ir aiškiai atsakysime į Jums rūpimus klausimus.</p>
             </article>
             <article class="why__item">
-              <span class="why__num">04</span>
+              <span class="why__num" aria-hidden="true">04</span>
               <p>Turime patirties apskaitos audito srityje.</p>
             </article>
             <article class="why__item why__item--featured">
               <div class="why__item-inner">
-                <span class="why__num">05</span>
+                <span class="why__num" aria-hidden="true">05</span>
                 <p>
                   Jūsų saugumui – mūsų veikla apdrausta profesinės civilinės
                   atsakomybės privalomuoju draudimu.
@@ -161,48 +172,60 @@
         </div>
       </section>
 
-      <section id="paslaugos" class="services">
+      <section
+        id="paslaugos"
+        class="services"
+        aria-labelledby="services-title"
+        tabindex="-1"
+      >
         <div class="container">
           <span class="section-label">Paslaugos</span>
-          <h2 class="section-title">Ką galime nuveikti dėl Jūsų verslo</h2>
+          <h2 id="services-title" class="section-title">
+            Ką galime nuveikti dėl Jūsų verslo
+          </h2>
           <div class="services__grid">
             <article class="service-card">
-              <span class="service-card__num">01</span>
+              <span class="service-card__num" aria-hidden="true">01</span>
               <h3 class="service-card__title">Naujų įmonių registravimas</h3>
             </article>
             <article class="service-card">
-              <span class="service-card__num">02</span>
+              <span class="service-card__num" aria-hidden="true">02</span>
               <h3 class="service-card__title">Apleistos apskaitos tvarkymas</h3>
             </article>
             <article class="service-card">
-              <span class="service-card__num">03</span>
+              <span class="service-card__num" aria-hidden="true">03</span>
               <h3 class="service-card__title">Finansų apskaitos darbo organizavimas</h3>
             </article>
             <article class="service-card">
-              <span class="service-card__num">04</span>
+              <span class="service-card__num" aria-hidden="true">04</span>
               <h3 class="service-card__title">Konsultavimas mokesčių klausimais</h3>
             </article>
             <article class="service-card">
-              <span class="service-card__num">05</span>
+              <span class="service-card__num" aria-hidden="true">05</span>
               <h3 class="service-card__title">Finansų apskaitos organizavimo patikrinimas</h3>
             </article>
             <article class="service-card">
-              <span class="service-card__num">06</span>
+              <span class="service-card__num" aria-hidden="true">06</span>
               <h3 class="service-card__title">Ataskaitų rengimas</h3>
             </article>
             <article class="service-card">
-              <span class="service-card__num">07</span>
+              <span class="service-card__num" aria-hidden="true">07</span>
               <h3 class="service-card__title">Gyventojų deklaracijų pildymas</h3>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="kontaktai" class="contact">
+      <section
+        id="kontaktai"
+        class="contact"
+        aria-labelledby="contact-title"
+        tabindex="-1"
+      >
         <div class="container contact__inner">
           <div class="contact__left">
             <span class="section-label">Kontaktai</span>
-            <h2 class="section-title">Susisiekite su mumis</h2>
+            <h2 id="contact-title" class="section-title">Susisiekite su mumis</h2>
             <p class="contact__text">
               Paprastai ir aiškiai atsakysime į Jums rūpimus klausimus ir
               pasiūlysime tinkamiausią apskaitos variantą.
