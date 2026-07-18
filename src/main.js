@@ -14,6 +14,15 @@ themeToggle?.addEventListener("click", () => {
 
 setTheme(document.documentElement.dataset.theme || "light");
 
+const header = document.querySelector(".header");
+
+function updateHeader() {
+  header?.classList.toggle("header--scrolled", window.scrollY > 8);
+}
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     const id = anchor.getAttribute("href");
