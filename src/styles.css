@@ -18,9 +18,13 @@
   --color-text-light: rgba(255, 255, 255, 0.75);
   --color-border: #d8d3c8;
   --color-header-bg: rgba(247, 244, 237, 0.75);
-  --color-header-bg-scrolled: rgba(255, 255, 255, 0.22);
+  --color-header-bg-scrolled: rgba(255, 255, 255, 0.06);
   --color-header-glass-border: rgba(255, 255, 255, 0.5);
   --color-header-glass-shadow: 0 4px 24px rgba(26, 36, 30, 0.06);
+  --color-header-border-blue: rgba(59, 130, 246, 0.8);
+  --color-header-border-green: rgba(34, 197, 94, 0.8);
+  --color-header-border-yellow: rgba(234, 179, 8, 0.85);
+  --color-header-border-red: rgba(239, 68, 68, 0.8);
   --color-on-dark: #fff;
 
   --gradient-blob-1: radial-gradient(
@@ -82,9 +86,13 @@
   --color-text-light: rgba(255, 255, 255, 0.75);
   --color-border: #2e3a34;
   --color-header-bg: rgba(18, 24, 22, 0.75);
-  --color-header-bg-scrolled: rgba(18, 24, 22, 0.35);
+  --color-header-bg-scrolled: rgba(18, 24, 22, 0.1);
   --color-header-glass-border: rgba(255, 255, 255, 0.1);
   --color-header-glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --color-header-border-blue: rgba(96, 165, 250, 0.85);
+  --color-header-border-green: rgba(74, 222, 128, 0.85);
+  --color-header-border-yellow: rgba(250, 204, 21, 0.9);
+  --color-header-border-red: rgba(248, 113, 113, 0.85);
 
   --gradient-blob-1: radial-gradient(
     ellipse 80% 60% at 8% 8%,
@@ -184,9 +192,56 @@ a {
   background: var(--color-header-bg-scrolled);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid var(--color-header-glass-border);
+  border: 1px solid transparent;
   border-radius: var(--radius-header-scrolled);
   box-shadow: var(--color-header-glass-shadow);
+}
+
+.header--scrolled::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    var(--color-header-border-blue),
+    var(--color-header-border-green),
+    var(--color-header-border-yellow),
+    var(--color-header-border-red),
+    var(--color-header-border-blue)
+  );
+  background-size: 400% 400%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: header-border-blink 7s ease-in-out infinite;
+}
+
+@keyframes header-border-blink {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.4;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header--scrolled::after {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 .header__inner {
