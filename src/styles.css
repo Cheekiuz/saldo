@@ -551,6 +551,26 @@ section:focus {
   color: var(--color-text-light);
 }
 
+.about__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.about__badges img {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.about__badges img:hover {
+  opacity: 1;
+}
+
 /* Why us */
 .why {
   padding-block: var(--section-padding);
@@ -790,6 +810,7 @@ section:focus {
 
 .footer__inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -805,6 +826,26 @@ section:focus {
 .footer__copy {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.55);
+}
+
+.footer__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__badges img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
+}
+
+.footer__badges img:hover {
+  opacity: 1;
 }
 
 /* Responsive */
@@ -1094,7 +1135,15 @@ section:focus {
   .footer__inner {
     flex-direction: column;
     text-align: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .footer__badges {
+    justify-content: center;
+  }
+
+  .about__badges {
+    justify-content: flex-start;
   }
 
   .footer__copy {
