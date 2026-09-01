@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="lt">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
-    <meta
-      name="description"
-      content="UAB Saldo – profesionali finansų apskaita. Tvarkinga ir teisinga apskaita – įmonės sėkmės garantas."
-    />
-    <title>SALDO - Finansų apskaita</title>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -19,9 +11,25 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+      gtag("consent", "default", {
+        analytics_storage: "granted",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
       gtag("js", new Date());
-      gtag("config", "G-RMT8ZSBLSN", { anonymize_ip: true });
+      gtag("config", "G-RMT8ZSBLSN");
     </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="UAB Saldo – profesionali finansų apskaita. Tvarkinga ir teisinga apskaita – įmonės sėkmės garantas."
+    />
+    <title>SALDO - Finansų apskaita</title>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
     <script>
       (function () {
         const stored = localStorage.getItem("theme");
