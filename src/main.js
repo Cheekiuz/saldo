@@ -1,5 +1,3 @@
-import { initAnalytics } from "./analytics.js";
-
 const themeToggle = document.querySelector(".theme-toggle");
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
@@ -47,5 +45,3 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     navigateToTarget(target, { instant: target.id === "main-content" });
   });
 });
-
-initAnalytics();
